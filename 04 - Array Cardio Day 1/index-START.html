@@ -84,12 +84,17 @@
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
-    const transports = data.reduce((total,current) => {
-      console.log(current)
-    current.includes('car') ? 1 : 0;
-    console.log(total);
-    },0
+    const transports = data.reduce((p,c,i,arr,as) => {
+    if(!p[c]){
+      p[c] = 0;
+    }
+    p[c]++;
+    return p;
+    },
+    {}
     );
+
+    console.log(transports);
   </script>
 </body>
 </html>
